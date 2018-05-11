@@ -7,7 +7,7 @@ public class AutoClicker {
     //delay between clicks in ms
     private int delay;
 
-    public AutoClicker(){
+    public AutoClicker(int delay){
         try{
             this.robot = new Robot();
         }
@@ -15,7 +15,7 @@ public class AutoClicker {
             e.printStackTrace();
         }
         //default delay
-        this.delay = 300;
+        this.delay = delay;
     }
 
     public void clickMouse(int button){
