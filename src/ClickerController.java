@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 public class ClickerController extends Application {
 
+	private AutoClicker autoClicker = new AutoClicker(1, 1);
+
 	@FXML
 	public TextField numClickText;
 
@@ -29,8 +31,8 @@ public class ClickerController extends Application {
 		Integer delay = Integer.parseInt(delayText.getText()) * 1000;
 		Integer count = Integer.parseInt(numClickText.getText());
 
-		AutoClicker autoClicker = new AutoClicker(delay, count);
-
+		autoClicker.setCount(count);
+		autoClicker.setDelay(delay);
 		autoClicker.start();
 	}
 
