@@ -9,10 +9,8 @@ import javafx.stage.Stage;
 public class ClickerController extends Application {
 
 	private AutoClicker autoClicker = new AutoClicker(1, 1);
-
 	@FXML
 	public TextField numClickText;
-
 	@FXML
 	public TextField delayText;
 

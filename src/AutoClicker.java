@@ -7,6 +7,7 @@ public class AutoClicker {
 
     //delay between clicks in ms
     private int delay;
+    //clickcount
     private int count;
 
     public AutoClicker(int delay, int count) {
@@ -26,7 +27,7 @@ public class AutoClicker {
         try {
             robot.mousePress(button);
             // adds static delay
-            robot.delay(50);
+            robot.delay(150);
             //release mousepress
             robot.mouseRelease(button);
             robot.delay(delay);
