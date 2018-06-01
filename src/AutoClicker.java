@@ -7,7 +7,7 @@ public class AutoClicker {
 
     //delay between clicks in ms
     private int delay;
-    //clickcount
+    //click count
     private int count;
 
     public AutoClicker(int delay, int count) {
@@ -22,6 +22,11 @@ public class AutoClicker {
         this.count = count;
     }
 
+    public int randomWithRange(int min, int max){
+        int range = (max - min) + 1;
+        return (int)(Math.random() * range) + min;
+    }
+
     public void clickMouse(int button){
         // this method only press the button, does not release
         try {
@@ -30,7 +35,8 @@ public class AutoClicker {
             robot.delay(150);
             //release mousepress
             robot.mouseRelease(button);
-            robot.delay(delay);
+            //robot.delay(delay);                    static delay
+            robot.delay(randomWithRange(4,delay));  //random delay between clicks, starting from 5
         }
         catch (Exception e){
             e.printStackTrace();
@@ -51,10 +57,12 @@ public class AutoClicker {
         }
 
         System.out.println("AC FIN");
+
     }
 
     public void setDelay(int ms){
         this.delay = ms;
+        //randomWithRange(5, ms);
     }
     public void setCount(int count) {
         this.count = count;
